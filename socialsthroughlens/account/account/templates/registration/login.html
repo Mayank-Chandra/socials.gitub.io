@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+<head>
+    <title>{% block title%}Login{% endblock %}</title>
+    <link rel="stylesheet" href="css/base.css">
+</head>
+{% block content %}
+    <h1 class='login'>Login</h1>
+    {% if form.errors %}
+    <p class='login'>
+        Your username and password did not match.
+        Please try again.
+    </p>
+    {% else %}
+    <p class='login'>Please, use the following form to login</p>
+    {% endif %}
+    <div class='login-form'>
+        <h1 class='login_head'>
+            LOG IN
+        </h1>
+        <form action="{% url 'account:login' %}" method='post'>
+            {{form.as_p}}
+            {% csrf_token %}
+            <input type="hidden" name='next' value="{{next}}"/>
+            <p><input class='button' type="submit" value='Login'></p>
+        </form>
+        <p class='password_reset`'>
+            <a href="{% url 'account:password_reset' %}">
+                Forgotten your Password?
+            </a>
+        </p>
+    </div>
+    <div>
+        <ul>
+            <li>
+                <a href="{% url 'social:begin' 'google-oauth2' %}">
+                    Sign in with Google
+                </a>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

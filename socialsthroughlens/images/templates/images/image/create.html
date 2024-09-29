@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static%}
+<link rel="stylesheet" href="css/bookmarklet.css">
+
+{% block title %}Upload an Image using bookmark {% endblock %}
+
+{% block content %}
+    <h1 class='upload-image'>Upload an Image</h1>
+    <img src="{{request.GET.url}}" class="image-preview">
+    <form method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" value='Save It!!'>
+    </form>
+{% endblock %}

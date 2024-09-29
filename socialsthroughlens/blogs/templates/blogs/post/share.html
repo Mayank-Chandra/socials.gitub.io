@@ -1,0 +1,21 @@
+{% extends 'blogs/base.html' %}
+{% block title %}Share a post{% endblock %}
+{% block content %}
+    {% if sent %}
+    <h1 class='email_notify'>Email sent successfully</h1>
+    <p class=sent_title>
+        "{{post.title}}" was successfully sent to {{form.cleaned_data.to}}.
+    </p>
+    {% else %}
+    <h1 class='sent_title'>
+        Share "{{post.title}}" by e-mail
+    </h1>
+<div class='sent_body'>
+    <form method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" value="Send e-mail">
+    </form>
+    {% endif %}
+</div>
+{% endblock %}

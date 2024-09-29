@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <link href="{% static 'css/base.css' %}" rel="stylesheet">
+</head>
+<body>
+  <div id="header">
+    {% if request.user.is_authenticated %}
+      <ul class="menu">
+        <li class='Dashboard'>
+          <a href="{% url "account:dashboard" %}">Home</a>
+        </li>
+        <li class='Gallery'>
+          <a href="#">Gallery</a>
+        </li>
+        <li  class=People>
+          <a href="#">Blogs</a>
+        </li>
+      </ul>
+    {% endif %}
+    <span class="user">
+      {% if request.user.is_authenticated %}
+        Hello,{{ request.user.first_name|default:request.user.username }}
+        <form action="{% url 'account:logout' %}" method="post">
+          <button class='button' type="submit">Logout</button>
+          {% csrf_token %}
+        </form>
+      {% comment %} {% else %}
+        <a href="{% url 'account:login' %}">Log-in</a> {% endcomment %}
+      {% endif %}
+      {% if message %}
+      <ul class='messages'>
+        {% for message in messages %}
+        <li class='{{message.tags}}'>
+          {{message|safe}}
+          <a href="#" class='close'></a>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </span>
+  </div>
+  <div class='images'>
+    <a href=""></a>
+  </div>
+  <div id="content">
+    {% block content %}
+    {% endblock %}
+  </div>
+  <script src="//cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js"></script>
+  <script>
+    const csrftoken=Cookies.get('csrf_token')
+    document.addEventListener('DOMContentLoaded',(event)=>{
+      {% block domready %}
+      {% endblock %}
+    })
+  </script>
+</body>
+</html>

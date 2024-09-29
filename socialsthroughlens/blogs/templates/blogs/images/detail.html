@@ -1,0 +1,42 @@
+{%extends 'blogs/base.html' %}
+{% load blog_tags %}
+
+{% block title %}{{image.title}}{% endblock %}
+{% block content %}
+<div class='image_head'>
+    <h1 class='title_detail'>{{image.title}}</h1>
+    <p class=date_image>
+        Published on {{image.publish}} by {{image.author}}
+    </p>
+    <p class='tags'>Tags 
+        {% for tag in image.tags.all %}
+        <a class='tag_url' href="{% url 'blogs:image_list_by_tag' tag.slug %}">
+            {{tag.name}}
+        </a>{% if not forloop.last%}, {%endif%}
+        {% endfor %}
+    </p>
+</div> 
+<div class='image_body'>
+    <p>------------------------------------
+Location ----------------------------------
+        {{image.location}}{{image.city|markdown}}{{image.state|markdown}}{{image.country|markdown}}
+        ----------------------------------
+        About the Pic----------------------------------{{image.description|markdown}}
+    </p>
+</div>
+    <img src="{{image.image.url}}" class='detail_image'> 
+    <p class='line'>------------------------------------------------------</p>
+<div class='similar_images'>
+    Similar Posts
+    {% for image in similar_images %}
+    <p>
+    <div>
+        <a href="{{image.get_absolute_url}}">{{image.title}}
+            {% comment %} <img src="{{image.image.url}}" class='detail_image'> {% endcomment %}
+        </a>
+    </div>
+    </p>
+    {% empty %}
+        There are no similar posts yet.
+    {% endfor %}
+{% endblock %}

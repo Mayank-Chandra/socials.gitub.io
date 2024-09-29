@@ -1,0 +1,25 @@
+{% load static %}
+{% load blog_tags %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <script src="{% static 'blogs.js' %}"></script>
+    </head>
+    <body>
+        <h1 class='title'>Through Camera Lens</h1>
+        <ul class='menu'>
+            <li class='home'><a href="{% url 'blogs:home' %}">Home</a></></li>
+            <li class='Gallery'><a class='Gallery' href="{% url 'blogs:image_list' %}">Gallery</a></li>
+            <li class='blogs'><a class='blogs' href="{% url 'blogs:post_list' %}">Blogs</a></li>
+        </ul>
+        <div id='content'>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

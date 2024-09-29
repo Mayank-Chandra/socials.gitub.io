@@ -1,0 +1,26 @@
+{% extends 'blogs/base.html' %}
+{% load blog_tags %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/base.css'}">
+
+{% block title %}Gallery{% endblock %}
+{% block content %}
+<div class='image_border'>
+    <p class='myimages'>Gallery</p>
+    {% if tag %}
+        <h2 class='tags'>Images tagged with '{{tag.name}}'</h2>
+    {% endif %}
+    <div class="gallery">
+        {% for image in images %}
+            <div class="polaroid {{ image.orientation }}">
+                <a href="{{image.get_absolute_url}}">
+                <img src="{{ image.image.url }}" alt="{{ image.title }}">
+                <div class="caption">{{ image.title }}</div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+

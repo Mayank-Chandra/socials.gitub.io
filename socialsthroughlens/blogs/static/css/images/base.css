@@ -1,0 +1,465 @@
+@font-face {
+    font-family: "hello";
+    src: url("fonts/hello/Hello.ttf") format("truetype");
+}
+@font-face {
+    font-family:"Selmony Caligan" ;
+    src: url("fonts/senmoly_caligan/Senmoly/Caligan.otf") format('opentype');
+}
+@font-face {
+    font-family: "Brooklyn";
+    src: url("fonts/brooklyn_chill_out/Brooklyn\ Chill\ Out.ttf") format('truetype');
+}
+@font-face {
+    font-family: "fictional char";
+    src: url('fonts/fictional_character/fictionalcharacterDEMO.otf') format("opentype");
+}
+@font-face {
+    font-family: "Half term";
+    src: url("fonts/half_term_school_s_out/HalfTerm\,School\'sOut-Regular\(2\).ttf") format('truetype');
+}
+@font-face {
+    font-family: "Special Elite";
+    src: url('fonts/special-elite/SpecialElite.ttf') format('truetype');
+}
+@font-face {
+    font-family: "better grade";
+    src: url("fonts/better-grade-font/BetterGrade-519DV.ttf") format("truetype");
+}
+@font-face {
+    font-family: "villary";
+    src: url('fonts/villary-wisdom/Villary\ Wisdom.otf') format('opentype');
+}
+@font-face {
+    font-family: 'typewriter';
+    src: url('fonts/veteran_typewriter/veteran\ typewriter.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'autography';
+    src: url('fonts/autography/Autography.otf') format('opentype');
+}
+@font-face {
+    font-family: 'Pixel';
+    src: url('fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'batupest';
+    src: url('fonts/batuphat_script/Batuphat\ Script.otf') format('opentype');
+}
+@font-face {
+    font-family: 'love';
+    src: url('fonts/love_3/Love.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'southand';
+    src: url('fonts/southland/Southland\ TTF.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'samarkan';
+    src: url('fonts/samarkan/SAMAN___.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'creativo';
+    src: url(fonts/creativo/Creativo\ Regular.otf) format('opentype');
+}
+h1.title{
+    font-family: 'southand';
+    font-size: 5vw;
+    
+}
+body{
+    background-image: url('images/blur-back.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+}
+ul.menu{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align:center;
+}
+li.home,li.Gallery,li.blogs{
+    display: inline;
+    font-size: 2vw;
+    margin-inline: 10vw;
+    font-family: 'Pixel';
+    text-align: center;
+    margin-left: 10vw;
+}
+a.home,a.Gallery,a.blogs{
+    color: whitesmoke;
+    text-decoration: none;
+}
+div.border{
+    font-size: 2vh;
+    margin-top: 10vh;
+    width: 70%;
+    float: right;
+    font-family: 'love';
+    text-align: left;
+    /* background-color: steelblue; */
+    color: white;
+}
+div.sidebar{
+    width: 20%;
+    float: left;
+    /* background-color: aqua; */
+    border-radius: 2%;
+    font-family: 'love';
+    position: absolute;
+    margin-top: auto;
+}
+p.MyBlogs{
+    text-align: left;
+    font-family: 'Pixel';
+    font-size: 3vw;
+    padding-bottom: 15px;
+}
+div.post_detail,p.tags,p.date{
+    font-size: 2vw;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+a.tag_url{
+    font-weight: bold;
+    font-style: italic;
+}
+div.page{
+    text-align: center;
+    font-family: 'love';
+    font-size: 2vw;
+    /* background-color:rgba(0, 0, 0, 0.2); */
+    border:2rem;
+    border-radius: 2rem;
+}
+.comment_name{
+    color: white;
+    background-color:transparent;
+    margin-bottom: 10px;
+    
+}
+.comment_email{
+    color:white;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+.comment_body{
+    color:white;
+    background-color: transparent;
+    margin-bottom: 10px;
+
+}
+div.sent_body{
+    font-family: 'love';
+    font-size: 2vw;
+    text-align: center;
+    color: white;
+}
+h1.sent_title{
+    font-family: 'love';
+    font-size: 2vw;
+    text-align: center;
+}
+h1.email_notify{
+    font-family: 'love';
+    font-size: 2vw;
+}
+div.search_page{
+    font-family: 'love';
+    font-size: 2vw;
+    text-align: center;
+}
+.search{
+    color:white;
+    background-color: transparent;
+    margin-bottom: 10px;
+}
+a.post_link{
+    color:black;
+}
+span.user{
+    float: right;
+    font-family: 'autography';
+    font-size: 2vw;
+    margin-top: 3vh;
+    margin-right: 1vw;
+    font-weight: bold;
+}
+h1.dash_greet{
+    font-size: 2vw;
+    font-family:'love';
+    text-align: center;
+    /* background-color: white; */
+    width: 50vw;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 10vh;
+}
+p.dash_greet{
+    font-size: 2vw;
+    font-family:'love';
+    text-align: center;
+    /* background-color: white; */
+    width: 50vw;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 10vh;
+}
+a.blog_dash{
+    font-size: 2vw;
+    font-family: 'love';
+}
+h1.login,p.login{
+    font-size: 1.5vw;
+    font-family: 'love';
+    text-align: center;
+}
+.button {
+    --b: 3px;   /* border thickness */
+    --s: .45em; /* size of the corner */
+    --color: #ffffff;
+    
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    color: var(--color);
+    --_p: var(--s);
+    background:
+      conic-gradient(from 90deg at var(--b) var(--b),#ffffff00 90deg,var(--color) 0)
+      var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #ffffff;
+    outline-offset: .6em;
+    font-size: 16px;
+  
+    border: 0;
+  
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    font-family: 'love';
+  }
+  
+  .button:hover,
+  .button:focus-visible{
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+  }
+  
+  .button:active {
+    background: var(--color);
+    color: #fff;
+  }
+  .login_form{
+    color:white;
+    background-color: transparent;
+    margin-bottom: 10px;
+    font-size: 0.5vw;
+    font-family: 'love';
+  }
+  div.login-form{
+    color:black;
+    background-color: transparent;
+    font-size: 2vw;
+    font-family: 'love';
+    margin-top: 25vh;
+    height: auto;
+    width: 50vw;
+    text-align: center;
+    align-self: center;
+    border:10px solid ;
+    padding: 10px;
+    border-image: url(images/border.jpg) 30 round;
+    border-radius:2vh;
+
+  }
+  h1.login_head{
+    font-size: 4vw;
+    font-family: 'love';
+    color: black;
+    margin-top: 5vh;
+    position: relative;
+    padding-top: 5vh;
+  }
+  p.password_reset{
+    color:black;
+  }
+  a.thumbnail{
+    height: 0.5vh;
+    width: 0.5vw;
+}
+p.about_me{
+    font-size: 2vw;
+    font-family: 'love';
+    color: white;
+}
+span.headings{
+    font-size: 2vw;
+    color: white;
+    text-align: center;
+}
+.image_link{
+    width: 20%;
+    height: 20%;
+}
+
+p.myimages{
+    font-family: 'love';
+    font-size: 1.2vw;
+    text-align: center;
+    margin-top: 5vh;
+}
+h1.img_heading{
+    font-family: 'hello';
+    color:black;
+
+}
+li.images{
+    display: inline;
+    font-size: 2vw;
+    margin-inline: 10vw;
+    font-family: 'Pixel';
+    text-align: center;
+    margin-left: 10vw;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2vw;
+    padding: 2vw;
+    margin-top: 2vh;
+}
+
+.polaroid {
+    background: white;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    height: auto;
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;
+}
+
+.polaroid.vertical {
+    width: 19vh;
+}
+
+.polaroid.horizontal {
+    width: 26vw;
+    height: 19vh;
+}
+
+.caption {
+    margin-top: 10px;
+    font-size: 22px;
+    color: #333;
+    font-family: 'hello';
+}
+.polaroid:hover{
+    transform: scale(1.05);
+}
+div.image_border{
+        font-family:comic sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        margin-top: 20vh;
+        /* margin-left:5vw; */
+        /* background-color: white; */
+        content: "";
+        clear: both;
+        display: table;
+}
+.detail_image{ 
+    display: block;
+    width: 35%;
+    height: 35%;
+    margin-top: 5vh;
+    margin-left: 2vw;
+}
+p.date_image{
+    margin-top: 2vh;
+    color: white;
+    text-align: center;
+    font-size: 1.2vw;
+    /* padding-right: 15vw; */
+    
+}
+.title_detail{
+    margin-top: 20vh;
+    /* margin-left: 28vw; */
+    text-align: center;
+    font-size: 5vw;
+    /* padding-right: 20vw; */
+    font-family:'samarkan' ;
+}
+div.image_polaroid{
+    background-color: white;
+}
+p.image_body{
+    margin-top: 15vh;
+    color: white;
+    padding-left: 150vw;
+}
+.similar_images{
+    margin-top: 10vh;
+    text-align: center;
+    font-family: 'love';
+    font-size: 2vw;
+}
+p.post_body{
+    color: white;
+    border: white;
+    border-radius: 2rem;
+    border-width: 2rem;
+}
+h2.tags{
+    font-family: 'love';
+    font-size: 1vw;
+    padding-left: 2vw;
+}
+p.tags{
+    font-size: 1.5vw;
+    text-align: center;
+    /* padding-right: 23vw;  */
+
+}
+
+
+.line{
+    text-align: center;
+    font-family: 'love';
+    font-size: 2.5vw;
+    margin-top: 25vh;
+}
+div.image_head{
+    /* background-color: aqua; */
+    color:black;
+}
+div.image_body{
+    /* background-color: aquamarine; */
+    width: 60%;
+    height: 60%;
+    float: right;
+    text-align: justify;
+    font-family:'creativo';
+    font-size: 1.5vw;
+    color: white;
+}
+a.button{
+    float: left;
+}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="css/base.css">
+
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+    <h1 class='dash_greet'>Home</h1>
+    {% comment %} {% with total_images_created=request.user.images_created.count %} {% endcomment %}
+    {% comment %} <p>Welcome to your Dashboard. You have bookmarked {{total_images_created}} image{{total_images_created|pluralize}}.</p>
+    {% endwith %}
+    <p>Drag the following button to your  bookmarks toolbar to bookmark images from other websites -> <a href="javascript:{% include 'bookmarklet.js' %}" class='button'>Bookmark it</a></p> {% endcomment %}
+    {% comment %} <p>You can also <a href="{% url 'account:edit' %}">edit your profile</a> or
+    <a href="{% url 'account:password_change' %}">Change your Password</a></p> {% endcomment %}
+    <p class='dash_greet'>Welcome to home Page of social through lens</p>
+    <ul>
+        <li><a class='blog_dash' href="{% url 'blogs:post_list' %}">Blogs</a></li>
+    </ul>
+{% endblock %}

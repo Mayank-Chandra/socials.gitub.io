@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" href="css/bookmarklet.css">
+{% block title %}Upload Image{% endblock %}
+
+{% block content %}
+<h1 class='upload-image'>Upload an Image </h1>
+<form method="post">
+    {{form.as_p}}
+    {% csrf_token %}
+    <input type="submit" value='Upload Image!!' enctype="multipart/form-data">
+</form>
+{% endblock %}

@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "hello";
+    src: url("fonts/hello/Hello.ttf") format("truetype");
+}
+@font-face {
+    font-family:"Selmony Caligan" ;
+    src: url("fonts/senmoly_caligan/Senmoly/Caligan.otf") format('opentype');
+}
+@font-face {
+    font-family: "Brooklyn";
+    src: url("fonts/brooklyn_chill_out/Brooklyn\ Chill\ Out.ttf") format('truetype');
+}
+@font-face {
+    font-family: "fictional char";
+    src: url('fonts/fictional_character/fictionalcharacterDEMO.otf') format("opentype");
+}
+@font-face {
+    font-family: "Half term";
+    src: url("fonts/half_term_school_s_out/HalfTerm\,School\'sOut-Regular\(2\).ttf") format('truetype');
+}
+@font-face {
+    font-family: "Special Elite";
+    src: url('fonts/special-elite/SpecialElite.ttf') format('truetype');
+}
+@font-face {
+    font-family: "better grade";
+    src: url("fonts/better-grade-font/BetterGrade-519DV.ttf") format("truetype");
+}
+@font-face {
+    font-family: "villary";
+    src: url('fonts/villary-wisdom/Villary\ Wisdom.otf') format('opentype');
+}
+title{
+    font-family: "villary";
+    font-size: 100px;
+    margin-top: 50px;
+    text-align: center;
+    color:black;
+}

@@ -1,0 +1,19 @@
+{%load static %}
+{% load widget_tweaks %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<h2>Add a new comment</h2>
+<form action="{% url 'blogs:post_comment' post.id %}" method='post'>
+    <div class='comment_name'>
+        {{form.name.as_field_group}}
+    </div>
+    <div class='comment_email'>
+        {{form.email.as_field_group}}
+    </div>
+    <div class='comment_body'>
+        {{form.body.as_field_group}}
+    </div>
+    {% csrf_token %}
+    <p class='comment'><input class='button' type="submit" value="Add comment"></p>
+</form>

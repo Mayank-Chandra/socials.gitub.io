@@ -1,0 +1,56 @@
+services:
+  db:
+    image: postgres:16.2
+    restart: always
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+  web:
+    build: .
+    command: ["./wait-for-it.sh", "db:5432", "--",
+              "uwsgi", "--ini", "/code/config/uwsgi/uwsgi.ini"]
+    restart: always
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=socialsthroughlens.settings.prod
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - db
+  nginx:
+    image: nginx:1.25.5
+    restart: always
+    volumes:
+      - ./config/nginx:/etc/nginx/templates
+      - .:/code
+    ports:
+      - "80:80" 
+      - "433:433"
+  daphne:
+    build: .
+    working_dir: /code/socialsthroughlens/
+    command: ['../wait-for-it.sh','db:5432','--',
+              'daphne','-b','0.0.0.0','-p','9001',
+              'socialsthroughlens.asgi:application'
+              ]
+    restart: always
+    volumes:
+      - .:/code
+    environment:
+      - DJANGO_SETTINGS_MODULE=socialsthroughlens.settings.prod
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - db
+
+
+volumes:
+  pgdata:
