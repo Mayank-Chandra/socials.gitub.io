@@ -21,7 +21,5 @@
         }
 
     ]
-
-{ "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
     
 }
